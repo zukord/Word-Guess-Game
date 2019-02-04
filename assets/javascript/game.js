@@ -20,7 +20,7 @@ function hangman(){
     console.log(letterToGuess);
 
     document.onkeyup = function(event) {
-        document.getElementById('directions').innerHTML = '';
+        directions.textContent = "";
         var userGuess = event.key;
         $.each(letterToGuess, function(key, val){
             
