@@ -8,45 +8,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type = "text/javascript" src = "/assets/javascript/game.js"></script>
 </head>
-<body>
-    <p id="directions"><h3>Press any key to get started!</h3></p>
+<body onload="hangman()">
+    <div id="directions"><h3>Press any key to get started!</h3></div>
     <p id="guessed"></p>
     <p id="correctWord"></p>
-<!--     <script src="/assets/javascript/game.js">
-    hangman();
-    </script> -->
-    <script type="text/javascript">
-    var directions = document.getElementById("directions");
-    var guessed = document.getElementById("guessed");
-    var correctWord = document.getElementById("correctWord");
-    var words = ["tracer", "reaper", "widowmaker", "talon", "overwatch", "reinhardt", "zarya", "zenyatta"];
-    var remainingGuesses = 15;
-    var correctLetters = [];
-    var wordToGuess = words[Math.floor(Math.random() * words.length)];
-    var letterToGuess = [];
-
-    for (var i=0; i < wordToGuess.length; i++){
-        correctLetters.push("_");
-        letterToGuess[i] = wordToGuess[i]
-    }
-    correctWord.textContent = correctLetters.join('');
-
-    document.onkeyup = function(event){
-        var userGuess = event.key;
-        $.each(letterToGuess, function(key, val){
-            directions.textContent = "";
-            if (letterToGuess === userGuess){
-                    correctLetters[key] = val;
-                    correctWord.textContent = correctLetters;
-                    console.log(guessedLetters);
-            } else {
-                remainingGuesses--;
-                console.log(remainingGuesses);
-            }
-        });     
-    }
-    </script>
 
 <footer class="footer">
         <div class="container">
